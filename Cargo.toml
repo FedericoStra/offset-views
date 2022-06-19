@@ -1,6 +1,6 @@
 [package]
 name = "offset-views"
-version = "0.1.0"
+version = "0.1.1"
 description = "Create and index offset views of arrays, slices, strings, etc."
 authors = ["Federico Stra <stra.federico@gmail.com>"]
 license = "MIT"
