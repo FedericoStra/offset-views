@@ -3,7 +3,7 @@
 /// # Examples
 ///
 /// ```rust
-/// use offset_view::with_offset::WithOffset;
+/// use offset_views::with_offset::WithOffset;
 /// assert_eq!(3.with_offset(5), 8);
 /// assert_eq!((3..8).with_offset(-3), 0..5);
 /// ```
