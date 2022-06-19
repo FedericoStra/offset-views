@@ -1,0 +1,17 @@
+[package]
+name = "offset-views"
+version = "0.1.0"
+description = "Create and index offset views of arrays, slices, strings, etc."
+authors = ["Federico Stra <stra.federico@gmail.com>"]
+license = "MIT"
+repository = "https://github.com/FedericoStra/offset-views"
+categories = ["data-structures", "memory-management"]
+keywords = ["offset", "view", "slice"]
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+
+[dev-dependencies]
+cool_asserts = "2.0.3"
