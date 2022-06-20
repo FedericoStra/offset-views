@@ -1,4 +1,4 @@
-# TLE-tools (Rust crate)
+# Offset Views
 
 [![GitHub](https://img.shields.io/static/v1?label=github&message=FedericoStra/offset-views&color=brightgreen&logo=github)](https://github.com/FedericoStra/offset-views)
 [![Crates.io](https://img.shields.io/crates/v/offset-views?logo=rust)](https://crates.io/crates/offset-views)
