@@ -74,14 +74,40 @@ where
 }
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
-struct OffsetView<P, O> {
+pub struct OffsetView<P, O> {
     parent: P,
     offset: O,
 }
 
 impl<P, O> OffsetView<P, O> {
-    fn new(parent: P, offset: O) -> OffsetView<P, O> {
+    pub fn new(parent: P, offset: O) -> OffsetView<P, O> {
         OffsetView { parent, offset }
+    }
+}
+
+trait OffsetIndex<O, I> {
+    type Output;
+    fn with_offset(self, offset: O) -> Self::Output;
+}
+
+impl OffsetIndex<isize, usize> for isize {
+    type Output = usize;
+    fn with_offset(&self, offset: isize) -> usize {
+        (self + offset)
+            .try_into()
+            .expect("cannot convert to `usize`")
+    }
+}
+
+impl<P, O, I> Index<O> for OffsetView<P, O>
+where
+    P: Index<I>,
+    I: SliceIndex<P>,
+    O: OffsetIndex<O, I, Output = I>,
+{
+    type Output = P::Output;
+    fn index(&self, index: I) -> &Self::Output {
+        self.parent.index((index + self.offset).try_into().unwrap())
     }
 }
 
